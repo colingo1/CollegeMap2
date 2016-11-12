@@ -17,4 +17,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Main2Activity.class);
         startActivity(intent);
     }
+    public void loadCredits(View view)
+    {
+        Intent intent = new Intent(this,credits.class); //"this" specifies transition from first screen to next.
+        startActivity(intent);
+    }
 }

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CollegeMap2</string>
+<string name="credits_paragraph">
+College Map Android Application\n
+    Hack RPI 2016\n
+    Coded by Alston Chau, Colin Goldberg, Samvit Thakur\n
+    2016-11-12\n
+    Hello, world.
+</string>
 </resources>
