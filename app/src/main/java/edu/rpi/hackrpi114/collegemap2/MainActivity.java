@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void nextActivity(View view)
     {
-        Intent intent = new Intent(this,Main2Activity.class);
+        Intent intent = new Intent(this,MapsActivity.class);
         startActivity(intent);
     }
     public void loadCredits(View view)

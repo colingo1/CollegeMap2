@@ -7,4 +7,5 @@ College Map Android Application\n
     2016-11-12\n
     Hello, world.
 </string>
+    <string name="title_activity_maps">Map</string>
 </resources>
