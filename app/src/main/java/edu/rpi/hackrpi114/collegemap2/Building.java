@@ -5,10 +5,10 @@ package edu.rpi.hackrpi114.collegemap2;
  */
 
 public class Building {
-    public double latitude;
-    public double longitude;
     public String building_name;
     public String description;
+    public double latitude;
+    public double longitude;
     public String[] tags;
 
 }
