@@ -21,21 +21,28 @@ public class ViewMap extends FragmentActivity implements OnMapReadyCallback {
     private ArrayList<Building> getBuildings (String college)
     {
         SQLiteDatabase db = openOrCreateDatabase("AllBuildings.db",MODE_PRIVATE,null);
-        Cursor c= db.rawQuery("SELECT * FROM " + college,null);
         ArrayList<Building> buildings = new ArrayList<>();
-        if(c.moveToFirst()) {
-            do {
-                Building building = new Building();
-                building.building_name = c.getString(0);
-                building.building_name = c.getString(1);
-                building.latitude = Double.parseDouble(c.getString(2));
-                building.longitude = Double.parseDouble(c.getString(3));
-                String allTags = c.getString(4);
-                building.tags = allTags.split(" ");
+        try {
+            Cursor c = db.rawQuery("SELECT * FROM " + college, null);
+            if (c.moveToFirst()) {
+                do {
+                    Building building = new Building();
+                    building.building_name = c.getString(0);
+                    building.building_name = c.getString(1);
+                    building.latitude = Double.parseDouble(c.getString(2));
+                    building.longitude = Double.parseDouble(c.getString(3));
+                    String allTags = c.getString(4);
+                    building.tags = allTags.split(" ");
 
-                buildings.add(building);
+                    buildings.add(building);
 // Adding contact to list
-            } while (c.moveToNext());
+                } while (c.moveToNext());
+            }
+        }
+        catch(Exception e)
+        {
+            System.err.println(e.getMessage());
+
         }
         return buildings;
     }
