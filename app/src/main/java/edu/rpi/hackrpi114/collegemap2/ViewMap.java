@@ -67,12 +67,12 @@ public class ViewMap extends FragmentActivity implements OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         LatLng rpi = new LatLng(42.7302, -73.6788);
-        Building[] building_info = getBuildings("RPI");
-        LatLng rpi = new LatLng(42.7, 73.6);
-        for(int i = 0; i< building_info.length;i++){
-            LatLng build_loc = new LatLng(building_info[i].latitude,building_info[i].longitude);
-            mMap.addMarker(new MarkerOptions().position(build_loc).title(building_info[i].building_name));
-        }
+        ArrayList<Building> building_info = getBuildings("RPI");
+        /*
+        for(int i = 0; i< building_info.size();i++){
+            LatLng build_loc = new LatLng(building_info.get(i).latitude,building_info.get(i).longitude);
+            mMap.addMarker(new MarkerOptions().position(build_loc).title(building_info.get(i).building_name));
+        }*/
         mMap.addMarker(new MarkerOptions().position(rpi).title("RPI"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(rpi,15));
 
