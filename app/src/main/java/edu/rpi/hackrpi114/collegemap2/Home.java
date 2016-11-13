@@ -37,4 +37,9 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(this,credits.class);
         startActivity(intent);
     }
+    public void AddBuilding(View view)
+    {
+        Intent intent = new Intent(this,AddBuilding.class);
+        startActivity(intent);
+    }
 }

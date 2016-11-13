@@ -49,6 +49,11 @@
             android:layout_height="wrap_content"
             android:text="Credits"
             android:onClick="Credits"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add building"
+            android:onClick="AddBuilding"/>
     </LinearLayout>
 
 

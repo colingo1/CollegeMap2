@@ -40,7 +40,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".presetTour" />
         <activity android:name=".rankedTour" />
-        <activity android:name=".findLocation"></activity>
+        <activity android:name=".findLocation" />
+        <activity android:name=".AddBuilding"></activity>
     </application>
 
 </manifest>

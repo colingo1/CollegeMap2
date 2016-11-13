@@ -21,6 +21,8 @@ public class ViewMap extends FragmentActivity implements OnMapReadyCallback {
     private ArrayList<Building> getBuildings (String college)
     {
         SQLiteDatabase db = openOrCreateDatabase("AllBuildings.db",MODE_PRIVATE,null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + college + " (Name varchar(255), Description varchar(255)," +
+                " Latitude varchar(255), Longitude varchar(255), AllTags varchar(255) )");
         ArrayList<Building> buildings = new ArrayList<>();
         try {
             Cursor c = db.rawQuery("SELECT * FROM " + college, null);
@@ -28,7 +30,7 @@ public class ViewMap extends FragmentActivity implements OnMapReadyCallback {
                 do {
                     Building building = new Building();
                     building.building_name = c.getString(0);
-                    building.building_name = c.getString(1);
+                    building.description = c.getString(1);
                     building.latitude = Double.parseDouble(c.getString(2));
                     building.longitude = Double.parseDouble(c.getString(3));
                     String allTags = c.getString(4);
